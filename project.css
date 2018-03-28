@@ -3,17 +3,22 @@ html{
     height: 100%;
 }
 
+#mainModel{
+    position: absolute;
+    height: 150px;
+    width: 200px;
+}
 
 .modal-content_new{
     position: relative;
     margin: 0 auto;
     max-height: calc(100vh - 40px);
-    width: 95%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
 }
 
 .box_new{
-    /*background-color: white;*/
+    background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
     display: block;
@@ -21,10 +26,20 @@ html{
     height: 100%;
     width: 100%;
 }
-img{
-    position: absolute;
-    width: 20%;
-    height: 20%;
+.faultPicture{
+    position: relative;
     float: left;
     margin-right: 5px;
+}
+
+.resolutionPicture{
+    margin-top: 700px;
+    position: relative;
+    float: left;
+    margin-right: 5px;
+}
+
+.faultDiv{
+    position: absolute;
+    top:250px;
 }

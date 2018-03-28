@@ -3,18 +3,28 @@
     <script src="./vue.js"></script>
     <script src="./project.js"></script>
     <link rel="stylesheet" href="./project.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-
     <div id="app">
+        
+        <img id="mainModel" src="./image/model.jpg">
         <!--<parent @click="show()"></parent>-->
-        <div-image :items="items" @show-modal="show"></div-image>
-        <zen-modal v-if="showModal" @fireclose="showModal = false"></zen-modal>
+
+        <div class="faultDiv">
+            <div-image  :items="items" @show-modal="show"></div-image>
+        </div>
+        <div class="resolutionDiv">
+            <resolution-image  :resolutionitems="resolutionitems" @show-modal="show"></resolution-image>
+        </div>
+        <zen-modal v-if="showModal" @fireclose="showModal = false" :modalmessage="modalmessage"></zen-modal>
     </div>
 </head>
 <body>
 </body>
 </html>
+
+
 
 <!--<!DOCTYPE html>-->
 <!--<html lang="zh-cn">-->
@@ -34,16 +44,14 @@
 <!--</div>-->
 
 <!--<script type="text/javascript">-->
-    <!--var canvaspage = {-->
 
-    <!--}-->
 
     <!--Vue.component('zen-modal',{-->
         <!--template: `<div class="modal is-active">-->
 				  <!--<div class="modal-background"></div>-->
 				  <!--<div id="app" class="modal-content_new">-->
 				  	<!--<div id="app1" class="box_new">-->
-				  		<!--<span>默认模态框内容sssssssssssssssssssssssssssssssssssssssssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdffffffffffffffffff</span>-->
+				  		<!--<span>默认模态框内容</span>-->
 				  	<!--</div>-->
 				  <!--</div>-->
 				  <!--<button class="modal-close" @click="$emit('fireclose')"></button>-->
