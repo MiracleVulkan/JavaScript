@@ -13,8 +13,8 @@ html{
     position: relative;
     margin: 0 auto;
     max-height: calc(100vh - 40px);
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
 }
 
 .box_new{
@@ -42,4 +42,12 @@ html{
 .faultDiv{
     position: absolute;
     top:250px;
+}
+
+modal-table{
+    width: 1000px;
+}
+
+.positionRelative{
+    position: relative;
 }
