@@ -102,7 +102,7 @@ window.onload = function () {
 
     Vue.component('table-modal',{
         template:"<div>" +
-        "<el-dialog title='收货地址' :visible.sync='dialogtablevisible' :before-close=\"handleClose\">" +
+        "<el-dialog title='收货地址' :visible.sync='normalizedSize' :before-close=\"handleClose\">" +
         "<el-table :data='gridData'>" +
         "<el-table-column property='date' label='日期' width=\"150\"></el-table-column>" +
         "<el-table-column property='name' label='姓名' width='200'></el-table-column>" +
@@ -129,8 +129,6 @@ window.onload = function () {
                     name: '王小虎',
                     address: '上海市普陀区金沙江路 1518 弄'
                 }],
-                dialogTableVisible: false,
-                dialogFormVisible: false,
                 form: {
                     name: '',
                     region: '',
@@ -147,15 +145,15 @@ window.onload = function () {
         props:['dialogtablevisible'],
         methods: {
             handleClose :function(done) {
-                this.$emit('update:dialogtablevisible',false);
+                done();
+                this.$emit('updatevalue',false);
+            }
+        },
+        computed: {
+            normalizedSize: function () {
+                return this.dialogtablevisible;
             }
         }
-
-        // mothod:{
-        //     dialogTableVisible:function () {
-        //         return dialogtablevisible;
-        //     }
-        // }
     })
 
 
@@ -194,7 +192,6 @@ window.onload = function () {
         },
         methods:{
             show:function (message,showmode) {
-                alert(this.dialogtablevisible);
                 this.modalmessage = message;
                 this.mode = showmode;
                 this.dialogtablevisible = true;
@@ -203,6 +200,9 @@ window.onload = function () {
                 this.$alert("<img src='./image/model.jpg'>", 'HTML 片段', {
                     dangerouslyUseHTMLString: true
                 });
+            },
+            updatevalue:function (boolvalue) {
+                this.dialogtablevisible = boolvalue;
             }
         }
     })
